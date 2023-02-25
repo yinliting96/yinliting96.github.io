@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg_video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.content {
+    text-align: center;
+}
+
+.content .logo,
+.content .slogan {
+    width: auto;
+    height: 120px;
+}
+
+.content .logo img,
+.content .slogan img {
+    width: auto;
+    height: 100%;
+}
+
+.content .slogan {
+    margin: 16px 0;
+}
+
+.content .qrcode-box {
+    display: inline-block;
+    width: 312px;
+    height: 312px;
+    background: #fff;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-top: 24px;
+}
+
+.btn-box {
+    margin-top: 48px;
+}
+
+.btn-box .btn {
+    display: inline-block;
+    width: 254px;
+    height: 75px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn-box .btn:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.btn_android {
+    background: url(../image//desktop/btn_android.png) center / 100% no-repeat;
+    margin-right: 64px;
+}
+
+.btn_ios {
+    background: url(../image//desktop/btn_ios.png) center / 100% no-repeat;
+}
