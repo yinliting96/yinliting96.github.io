@@ -1,0 +1,205 @@
+<html lang="zh" style="font-size: 47.7931px; overflow: hidden; height: 100%;" class="fp-enabled">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta data-n-head="true" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="referrer" content="no-referrer">
+    <title>Xvideos中文免费版</title>
+    <meta data-n-head="true" name="keywords" content="Xvideos中文免费版">
+    <meta data-n-head="true" name="description" content="Xvideos中文免费版">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/mobile.css?_v=2.0">
+    <link href="./src/layer/need/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+    <script src="./src/js/jquery.min.js"></script>
+    <script src="./src/js/clipboard.min.js"></script>
+    <script src="./src/layer/layer.js"></script>
+    <script>
+        if (window.navigator.userAgent.indexOf('Mobile') == -1 && window.navigator.userAgent.indexOf('iPhone') == -1 && window.navigator.userAgent.indexOf('iPad') - 1 && window.navigator.userAgent.indexOf('Android') == -1) {
+            var code = window.location.search;
+            window.location.href = 'index.html' + code;
+        }
+    </script>
+    <script>
+        (function (c, d) {
+            var e = document.documentElement || document.body,
+                a = "orientationchange" in window ? "orientationchange" : "resize",
+                b = function () {
+                    var f = e.clientWidth;
+                    // e.style.fontSize = (f >= 750) ? "100px" : 100 * (f / 750) + "px"
+                    e.style.fontSize = (f >= 580) ? "77px" : 77 * (f / 580) + "px"
+                };
+            b();
+            c.addEventListener(a, b, false)
+        })(window);
+        window.browser = function () {
+            var u = navigator.userAgent,
+                app = navigator.appVersion;
+            return {
+                trident: u.indexOf('Trident') > -1, //IE内核
+                presto: u.indexOf('Presto') > -1, //opera内核
+                webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                // ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                ios: /(iPhone|iPad|iPod|iOS|Mac)/i.test(u),
+                android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+                iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                iPad: /(?:iPad|PlayBook)/.test(u), //是否iPad
+                webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+                weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+                qq: u.match(/QQ/i) == "qq", //是否QQ,
+                safari: /Safari/.test(u) && !/Chrome/.test(u) && u.indexOf('MQQBrowser') < 0
+            };
+        }();
+    </script>
+</head>
+
+<body>
+    <div class="mobile">
+        <div class="content">
+            <div class="logo">
+                <img src="./src/image/mobile/logo_xvideos2.png" alt="logo">
+            </div>
+            <div class="slogan">
+                <img src="./src/image/mobile/img_text.png" alt="logo">
+            </div>
+            <div class="btn-box">
+                <img class="btn btn_android" src="./src/image/mobile/btn_android.png">
+                <img class="btn btn_ios" src="./src/image/mobile/btn_ios.png">
+            </div>
+            <footer class="footer">
+                <span onclick="openDoc()">安装失败?点我查看安装教程</span>
+            </footer>
+        </div>
+    </div>
+    <div id="install-doc">
+        <img src="./src/image/mobile/close.png" alt="" class="fix-close" onclick="closeDoc()">
+        <iframe src="./doc.html" id="install-doc-iframe" width="100%" height="100%"
+            frameborder="0"></iframe>
+    </div>
+    <!-- 弹出窗口 -->
+    <div id="ios-mask">
+        <div class="modal">
+            <img class="close" onclick="closeMask()" src="/src/image/mobile/close.png" alt="" srcset="">
+            <div class="content">
+                <img src="/src/image/mobile/safari.png" alt="" srcset="">
+                <div>
+                    <h2>此链接只对<span style="color:red">Safari</span>有效</h2>
+                    <h2>复制并在<span style="color:red">Safari</span>打开</h2>
+                </div>
+            </div>
+            <div class="copy">
+                <div class="address">
+                    <span class="current_url"><script>document.write(location.href)</script></span>
+                    <span data-clipboard-text="" class="copy_btn" onclick="copyUrl()">复制</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.mobile').css('height', window.innerHeight)
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+        function randomString(e) {    
+            e = e || 32;
+            var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678",
+            a = t.length,
+            n = "";
+            for (let i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
+            return n
+        }
+
+        var inviteCode = GetQueryString('inviteCode') || '';
+        var channelCode = GetQueryString('channelCode') || '';
+        if (inviteCode) {
+            inviteCode = inviteCode.replace(/(^\s*)|(\s*$)/g, "");
+            $('.btn').attr('data-clipboard-text', inviteCode);
+        } else if (channelCode) {
+            channelCode = channelCode.replace(/(^\s*)|(\s*$)/g, "");
+            $('.btn').attr('data-clipboard-text', channelCode);
+        }
+
+        // 创建 唯一识别码
+        var uuid = randomString(24)
+
+        //剪切板
+        var clipboard = new ClipboardJS('.btn')
+
+        clipboard.on('success', function(e) {
+            downloadApp(e)
+        })
+        clipboard.on('error', function(e) {
+            downloadApp(e)
+        })
+        
+        function downloadApp(e) {
+            var appName = channelCode || 'EMAUVLTD';
+            if(window.browser.ios) {
+                if (!window.browser.safari) {
+                    openMask()
+                } else {
+                    layer.open({
+                        content: '正在下载描述文件<br/>如无法安装,请使用Safari浏览器访问此页面<br/>下载后请点击 设置=>已下载描述文件=>安装 承诺无毒,请放心使用',
+                        skin: 'msg',
+                        time: 8
+                    })
+                    if (inviteCode) {
+                        window.location.href = `https://tjsi.vip/front/cluser/c/ios/invite/file?merchantAcct=sf01&inviteCode=${inviteCode}&uuid=${uuid}`
+                    } else {
+                        location.href = `https://tjsi.vip/front/cluser/c/ios/invite/file?merchantAcct=sf01&inviteCode=${appName}&uuid=${uuid}&codeType=agentCode`
+                    }
+                }
+            } else {
+                layer.open({
+                    content: '应用正在安装中,十秒后无反应请再次点击下载!',
+                    skin: 'msg',
+                    time: 8
+                })
+                location.href = 'https://d3ruto4vul3wf8.cloudfront.net/sf01/channel/apk/' + appName + '.apk';
+            }
+        }
+
+        function copyUrl() {
+            var aux = document.createElement("input")
+            aux.setAttribute("value", location.href)
+            document.body.appendChild(aux)
+            aux.select()
+            document.execCommand("copy")
+            document.body.removeChild(aux)
+            // alert('复制成功,请使用Safari浏览器打开');
+            layer.open({
+                content: '复制成功,请使用Safari浏览器打开',
+                skin: 'msg',
+                time: 8
+            });
+        }
+
+        function openMask() {
+            $('#ios-mask').show()
+        }
+
+        function closeMask() {
+            $('#ios-mask').hide()
+        }
+
+        function openDoc() {
+            document.getElementById('install-doc').style.zIndex = 999;
+            $('#install-doc').show()
+        }
+
+        function closeDoc() {
+            document.getElementById('install-doc').style.zIndex = -2;
+            $('#install-doc').hide()
+        }
+    </script>
+</body>
+
+</html>
