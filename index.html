@@ -9,10 +9,11 @@
     <meta data-n-head="true" name="keywords" content="Xvideos中文免费版">
     <meta data-n-head="true" name="description" content="Xvideos中文免费版">
     <link rel="shortcut icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./src/css/desktop.css">
+    <link rel="stylesheet" href="./src/css/desktop.css?v=3.0">
+    <link rel="stylesheet" href="./src/swiper/swiper.min.css">
+    <script src="./src/swiper/swiper.min.js"></script>
     <script src="./src/js/qrcode.min.js"></script>
     <script src="./src/js/jquery.min.js"></script>
-    <script src="./src/js/clipboard.min.js"></script>
     <script>
         if (window.navigator.userAgent.indexOf('Mobile') > 0 || window.navigator.userAgent.indexOf('iPhone') > 0 || window.navigator.userAgent.indexOf('iPad') > 0 || window.navigator.userAgent.indexOf('Android') > 0) {
             var code = window.location.search;
@@ -21,88 +22,62 @@
     </script>
 </head>
 
-<body style="overflow: hidden; height: 100%;">
-    <video class="bg_video" src="/src/image/desktop/pc_bg.mp4?_v=2.0" autoplay muted playsinline loop></video>
-    <div class="content">
-        <div class="logo">
-            <img src="./src/image/desktop/logo_xvideos2.png" alt="logo">
-        </div>
-        <div class="slogan">
-            <img src="./src/image/desktop/img_txt.png" alt="slogan">
-        </div>
-        <div class="qrcode-box">
-            <div id="qrcode"></div>
-        </div>
-        <div class="btn-box">
-            <button type="button" class="btn btn_android"></button>
-            <button type="button" class="btn btn_ios"></button>
+<body>
+    <div class="page-content">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-item">
+                        <div class="banner">
+                            <img src="./src/image/desktop/01.png">
+                        </div>
+                        <div class="item-list">
+                            <img class="item" src="./src/image/desktop/ban_img1.png" alt="">
+                            <img class="item" src="./src/image/desktop/ban_img2.png" alt="">
+                            <img class="item" src="./src/image/desktop/ban_img3.png" alt="">
+                            <img class="item" src="./src/image/desktop/ban_img4.png" alt="">
+                            <img class="item" src="./src/image/desktop/ban_img5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-item">
+                        <div class="banner">
+                            <img src="./src/image/desktop/02.png">
+                        </div>
+                        <div class="item-list">
+                            <img class="item" src="./src/image/desktop/ban_img6.png" alt="">
+                            <img class="item" src="./src/image/desktop/ban_img7.png" alt="">
+                            <img class="item" src="./src/image/desktop/ban_img8.png" alt="">
+                            <img class="item" src="./src/image/desktop/ban_img9.png" alt="">
+                            <img class="item" src="./src/image/desktop/ban_img10.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <script>
-        $(function() {
-            var qrConfig = {
-                text: location.origin + '/mobile.html' + location.search,
-                width: 288,
-                height: 288,
-                colorDark : "#000000",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
-            }
-            new QRCode("qrcode", qrConfig)
-        })
-
-        function randomString(e) {    
-            e = e || 32;
-            var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678",
-            a = t.length,
-            n = "";
-            for (let i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
-            return n
-        }
-
-        function GetQueryString(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        }
-
-        var inviteCode = GetQueryString('inviteCode') || '';
-        var channelCode = GetQueryString('channelCode') || '';
-        if (inviteCode) {
-            inviteCode = inviteCode.replace(/(^\s*)|(\s*$)/g, "");
-            $('.btn').attr('data-clipboard-text', inviteCode);
-        } else if (channelCode) {
-            channelCode = channelCode.replace(/(^\s*)|(\s*$)/g, "");
-            $('.btn').attr('data-clipboard-text', channelCode);
-        }
-
-        // 创建 唯一识别码
-        var uuid = randomString(24)
-
-        //剪切板
-        var clipboard = new ClipboardJS('.btn')
-
-        clipboard.on('success', function(e) {
-            downloadApp(e)
-        })
-        clipboard.on('error', function(e) {
-            downloadApp(e)
-        })
-
-        function downloadApp(e) {
-            var appName = channelCode || 'EMAUVLTD';
-            if (e.trigger.className.indexOf('btn_android') > -1 || window.navigator.userAgent.indexOf('Android') > -1) {
-                location.href = 'https://d3ruto4vul3wf8.cloudfront.net/sf01/channel/apk/' + appName + '.apk';
-            } else {
-                if (inviteCode) {
-                    window.location.href = `https://xxvvdd.com/front/cluser/c/ios/invite/file?merchantAcct=sf01&inviteCode=${inviteCode}&uuid=${uuid}`
-                } else {
-                    location.href = `https://xxvvdd.com/front/cluser/c/ios/invite/file?merchantAcct=sf01&inviteCode=${appName}&uuid=${uuid}&codeType=agentCode`
-                }
-            }
-        }
-    </script>
+    <div class="qrcode-box">
+        <div id="qrcode"></div>
+    </div>
 </body>
+<script>
+    $(function() {
+        var mySwiper = new Swiper('.swiper', {
+            autoplay: true,
+            loop: true,
+            mousewheel: true
+        })
 
+        var qrConfig = {
+            text: location.origin + '/mobile.html' + location.search,
+            width: 128,
+            height: 128,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        }
+        new QRCode("qrcode", qrConfig)
+    })
+</script>
 </html>

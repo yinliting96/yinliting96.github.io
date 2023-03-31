@@ -1,5 +1,5 @@
 body {
-    background-color: #262941;
+    background-color: #000;
     font-size: 0.24rem;
     max-width: 750px;
     margin: 0 auto !important;
@@ -14,59 +14,60 @@ body {
     left: 0;
 }
 
-.mobile {
-    position: relative;
-}
-
-.mobile {
-    display: flex;
+.page-main {
+    /* display: flex;
     align-items: center;
-    justify-content: center;
-    background: url(../image/mobile/h5_bg.gif) top / cover no-repeat;
+    justify-content: center; */
 }
 
-.mobile >.content {
-    position: relative;
-    z-index: 3;
+.page-main .page-content {
+
 }
 
-.mobile >.content .logo {
-    width: 50%;
-    margin: 0 auto;
+.page-main .page-content .logo {
+    padding: 24px;
 }
 
-.mobile >.content .slogan {
-    width: 80%;
-    margin: calc(40 / 750 * 100vw) auto;
+.page-main .page-content .logo img {
+    width: auto;
+    height: 64px;
 }
 
-.mobile >.content .logo img,
-.mobile >.content .slogan img {
+.page-main .page-content .swiper {
+    display: flex;
+}
+
+.page-main .page-content .swiper .swiper-wrapper .swiper-slide .slide-item img {
     width: 100%;
 }
 
-.mobile >.content .btn-box {
-    width: 50%;
-    margin: calc(216 / 750 * 100vw) auto 0;
-}
-
-.mobile >.content .btn-box img {
-    display: inline-block;
-    width: 100%;
-}
-
-.mobile >.content .btn-box .btn_android {
-    margin-bottom: calc(100 / 750 * 100vw);
-}
-
-.mobile >.content .footer {
-    color: #fff;
-    margin: calc(32 / 750 * 100vw) 0 0;
+.page-main .page-content .bottom {
     text-align: center;
 }
 
-.mobile.img-bg >.content .footer {
-    color: #2e2e2e;
+.page-main .page-content .bottom .download {
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    margin: 48px 0 24px;
+}
+
+.page-main .page-content .bottom .download.btn-and {
+    background: url(../image//mobile/btn_android.png) center / 100% no-repeat;
+}
+
+.page-main .page-content .bottom .download.btn-ios {
+    background: url(../image//mobile/btn_ios.png) center / 100% no-repeat;
+}
+
+.page-main .page-content .bottom .text {
+    width: 80%;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.page-main .page-content .bottom .text img {
+    width: 100%;
 }
 
 #install-doc {

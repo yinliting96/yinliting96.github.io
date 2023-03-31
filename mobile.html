@@ -1,4 +1,4 @@
-<html lang="zh" style="font-size: 47.7931px; overflow: hidden; height: 100%;" class="fp-enabled">
+<html lang="zh" style="font-size: 47.7931px;" class="fp-enabled">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,6 +9,8 @@
     <meta data-n-head="true" name="keywords" content="Xvideos中文免费版">
     <meta data-n-head="true" name="description" content="Xvideos中文免费版">
     <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./src/swiper/swiper.min.css">
+    <script src="./src/swiper/swiper.min.js"></script>
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/mobile.css?_v=2.0">
     <link href="./src/layer/need/layer.css" type="text/css" rel="styleSheet" id="layermcss">
@@ -57,23 +59,51 @@
 </head>
 
 <body>
-    <div class="mobile">
-        <div class="content">
+    <div class="page-main">
+        <div class="page-content">
             <div class="logo">
-                <img src="./src/image/mobile/logo_xvideos2.png" alt="logo">
+                <img src="./src/image/mobile/logo.png" alt="">
             </div>
-            <div class="slogan">
-                <img src="./src/image/mobile/img_text.png" alt="logo">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-item">
+                            <img src="./src/image/mobile/ban_img1.png">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-item">
+                            <img src="./src/image/mobile/ban_img2.png">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-item">
+                            <img src="./src/image/mobile/ban_img3.png">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-item">
+                            <img src="./src/image/mobile/ban_img4.png">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-item">
+                            <img src="./src/image/mobile/ban_img5.png">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="btn-box">
-                <img class="btn btn_android" src="./src/image/mobile/btn_android.png">
-                <img class="btn btn_ios" src="./src/image/mobile/btn_ios.png">
+            <div class="bottom">
+                <div class="download"></div>
+                <div class="text">
+                    <img src="./src/image/mobile/img_text.png" alt="">
+                </div>
             </div>
-            <footer class="footer">
-                <span onclick="openDoc()">安装失败?点我查看安装教程</span>
-            </footer>
         </div>
     </div>
+    <!-- <footer class="footer">
+        <span onclick="openDoc()">安装失败?点我查看安装教程</span>
+    </footer> -->
     <div id="install-doc">
         <img src="./src/image/mobile/close.png" alt="" class="fix-close" onclick="closeDoc()">
         <iframe src="./doc.html" id="install-doc-iframe" width="100%" height="100%"
@@ -99,7 +129,21 @@
         </div>
     </div>
     <script>
-        $('.mobile').css('height', window.innerHeight)
+        if (window.browser.ios) {
+            $('.download').addClass('btn-ios')
+        } else {
+            $('.download').addClass('btn-and')
+        }
+
+        var mySwiper = new Swiper('.swiper', {
+            // autoplay: true,
+            loop: true,
+            mousewheel: true,
+            slidesPerView: 1.5,
+            spaceBetween: 8,
+            centeredSlides: true,
+            initialSlide: 0
+        })
 
         function GetQueryString(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -121,17 +165,17 @@
         var channelCode = GetQueryString('channelCode') || '';
         if (inviteCode) {
             inviteCode = inviteCode.replace(/(^\s*)|(\s*$)/g, "");
-            $('.btn').attr('data-clipboard-text', inviteCode);
+            $('.download').attr('data-clipboard-text', inviteCode);
         } else if (channelCode) {
             channelCode = channelCode.replace(/(^\s*)|(\s*$)/g, "");
-            $('.btn').attr('data-clipboard-text', channelCode);
+            $('.download').attr('data-clipboard-text', channelCode);
         }
 
         // 创建 唯一识别码
         var uuid = randomString(24)
 
         //剪切板
-        var clipboard = new ClipboardJS('.btn')
+        var clipboard = new ClipboardJS('.download')
 
         clipboard.on('success', function(e) {
             downloadApp(e)
