@@ -1,47 +1,14 @@
 body {
     margin: 0;
-    background: #000;
 }
-
-.page-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.swiper {
-    width: calc(1194 / (330 + 645) * 100vh);
-}
-
-.swiper .swiper-wrapper .swiper-slide .slide-item .banner {
-    width: calc(1194 / (330 + 645) * 100vh);
-    height: calc(645 / (330 + 645) * 100vh);
-}
-.swiper .swiper-wrapper .swiper-slide .slide-item .banner img {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper .swiper-wrapper .swiper-slide .slide-item .item-list {
-    width: calc(1194 / (330 + 645) * 100vh);
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.swiper .swiper-wrapper .swiper-slide .slide-item .item-list .item {
-    width: calc(230 / (330 + 645) * 100vh);
-    height: calc(330 / (330 + 645) * 100vh);
-}
-.swiper .swiper-wrapper .swiper-slide .slide-item .item-list .item img {
-    width: 100%;
-    height: 100%;
+.bg_video {
+    object-fit: cover;
 }
 
 .qrcode-box {
     position: fixed;
     right: 0;
-    bottom: 10vh;
+    bottom: calc((100vh - 350px) / 2);
     z-index: 1;
     width: 243px;
     height: 350px;

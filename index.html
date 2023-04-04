@@ -9,9 +9,7 @@
     <meta data-n-head="true" name="keywords" content="Xvideos中文免费版">
     <meta data-n-head="true" name="description" content="Xvideos中文免费版">
     <link rel="shortcut icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./src/css/desktop.css?v=3.0">
-    <link rel="stylesheet" href="./src/swiper/swiper.min.css">
-    <script src="./src/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="./src/css/desktop.css?v=176131571">
     <script src="./src/js/qrcode.min.js"></script>
     <script src="./src/js/jquery.min.js"></script>
     <script>
@@ -23,50 +21,16 @@
 </head>
 
 <body>
-    <div class="page-content">
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="slide-item">
-                        <div class="banner">
-                            <img src="./src/image/desktop/01.png">
-                        </div>
-                        <div class="item-list">
-                            <img class="item" src="./src/image/desktop/ban_img1.png" alt="">
-                            <img class="item" src="./src/image/desktop/ban_img2.png" alt="">
-                            <img class="item" src="./src/image/desktop/ban_img3.png" alt="">
-                            <img class="item" src="./src/image/desktop/ban_img4.png" alt="">
-                            <img class="item" src="./src/image/desktop/ban_img5.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-item">
-                        <div class="banner">
-                            <img src="./src/image/desktop/02.png">
-                        </div>
-                        <div class="item-list">
-                            <img class="item" src="./src/image/desktop/ban_img6.png" alt="">
-                            <img class="item" src="./src/image/desktop/ban_img7.png" alt="">
-                            <img class="item" src="./src/image/desktop/ban_img8.png" alt="">
-                            <img class="item" src="./src/image/desktop/ban_img9.png" alt="">
-                            <img class="item" src="./src/image/desktop/ban_img10.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <video class="bg_video" src="/src/video/ys.mp4?_v=2.0" poster="/src/image/desktop/ys.jpg" autoplay muted playsinline loop></video>
     <div class="qrcode-box">
         <div id="qrcode"></div>
     </div>
 </body>
 <script>
     $(function() {
-        var mySwiper = new Swiper('.swiper', {
-            autoplay: true,
-            loop: true,
-            mousewheel: true
+        $('.bg_video').css({
+            'width': window.innerWidth + 'px',
+            'height': window.innerHeight + 'px'
         })
 
         var qrConfig = {

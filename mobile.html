@@ -9,10 +9,8 @@
     <meta data-n-head="true" name="keywords" content="Xvideos中文免费版">
     <meta data-n-head="true" name="description" content="Xvideos中文免费版">
     <link rel="shortcut icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./src/swiper/swiper.min.css">
-    <script src="./src/swiper/swiper.min.js"></script>
     <link rel="stylesheet" href="./src/css/reset.css">
-    <link rel="stylesheet" href="./src/css/mobile.css?_v=4.0">
+    <link rel="stylesheet" href="./src/css/mobile.css?_v=7894648641">
     <link href="./src/layer/need/layer.css" type="text/css" rel="styleSheet" id="layermcss">
     <script src="./src/js/jquery.min.js"></script>
     <script src="./src/js/clipboard.min.js"></script>
@@ -23,229 +21,93 @@
             window.location.href = 'index.html' + code;
         }
     </script>
-    <script>
-        (function (c, d) {
-            var e = document.documentElement || document.body,
-                a = "orientationchange" in window ? "orientationchange" : "resize",
-                b = function () {
-                    var f = e.clientWidth;
-                    // e.style.fontSize = (f >= 750) ? "100px" : 100 * (f / 750) + "px"
-                    e.style.fontSize = (f >= 580) ? "77px" : 77 * (f / 580) + "px"
-                };
-            b();
-            c.addEventListener(a, b, false)
-        })(window);
-        window.browser = function () {
-            var u = navigator.userAgent,
-                app = navigator.appVersion;
-            return {
-                trident: u.indexOf('Trident') > -1, //IE内核
-                presto: u.indexOf('Presto') > -1, //opera内核
-                webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-                mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-                // ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-                ios: /(iPhone|iPad|iPod|iOS|Mac)/i.test(u),
-                android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
-                iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
-                iPad: /(?:iPad|PlayBook)/.test(u), //是否iPad
-                webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
-                weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
-                qq: u.match(/QQ/i) == "qq", //是否QQ,
-                safari: /Safari/.test(u) && !/Chrome/.test(u) && u.indexOf('MQQBrowser') < 0
-            };
-        }();
-    </script>
 </head>
 
 <body>
+    <video id="bg_video" class="bg_video" src="/src/video/2H5.mp4?_v=2.0" poster="/src/image/mobile/H5_00111.jpg" autoplay muted playsinline loop></video>
+    <div class="page-top">
+        <div class="logo">
+            <img src="./src/image/mobile/logo.png?_v=7894648641" alt="">
+        </div>
+    </div>
     <div class="page-main">
-        <div class="page-content">
-            <div class="logo">
-                <img src="./src/image/mobile/logo.png" alt="">
-            </div>
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="slide-item">
-                            <img src="./src/image/mobile/ban_img1.png">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-item">
-                            <img src="./src/image/mobile/ban_img2.png">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-item">
-                            <img src="./src/image/mobile/ban_img3.png">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-item">
-                            <img src="./src/image/mobile/ban_img4.png">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-item">
-                            <img src="./src/image/mobile/ban_img5.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <div class="download"></div>
-                <div class="text">
-                    <img src="./src/image/mobile/img_text.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <footer class="footer">
-        <span onclick="openDoc()">安装失败?点我查看安装教程</span>
-    </footer> -->
-    <div id="install-doc">
-        <img src="./src/image/mobile/close.png" alt="" class="fix-close" onclick="closeDoc()">
-        <iframe src="./doc.html" id="install-doc-iframe" width="100%" height="100%"
-            frameborder="0"></iframe>
-    </div>
-    <!-- 弹出窗口 -->
-    <div id="ios-mask">
-        <div class="modal">
-            <img class="close" onclick="closeMask()" src="/src/image/mobile/close.png" alt="" srcset="">
-            <div class="content">
-                <img src="/src/image/mobile/safari.png" alt="" srcset="">
-                <div>
-                    <h2>此链接只对<span style="color:red">Safari</span>有效</h2>
-                    <h2>复制并在<span style="color:red">Safari</span>打开</h2>
-                </div>
-            </div>
-            <div class="copy">
-                <div class="address">
-                    <span class="current_url"><script>document.write(location.href)</script></span>
-                    <span data-clipboard-text="" class="copy_btn" onclick="copyUrl()">复制</span>
-                </div>
-            </div>
-        </div>
+        <div class="download"></div>
     </div>
     <script>
-        if (window.browser.ios) {
-            $('.download').addClass('btn-ios')
-        } else {
-            $('.download').addClass('btn-and')
-        }
+        $(function() {
+            $('.bg_video').css({
+                'width': window.innerWidth + 'px',
+                'height': window.innerHeight + 'px'
+            })
 
-        var mySwiper = new Swiper('.swiper', {
-            autoplay: true,
-            loop: true,
-            mousewheel: true,
-            slidesPerView: 1.5,
-            spaceBetween: 8,
-            centeredSlides: true,
-            initialSlide: 0
-        })
+            function GetQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]);
+                return null;
+            }
 
-        function GetQueryString(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        }
+            function randomString(e) {    
+                e = e || 32;
+                var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678",
+                a = t.length,
+                n = "";
+                for (let i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
+                return n
+            }
 
-        function randomString(e) {    
-            e = e || 32;
-            var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678",
-            a = t.length,
-            n = "";
-            for (let i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
-            return n
-        }
+            var inviteCode = GetQueryString('inviteCode') || '';
+            var channelCode = GetQueryString('channelCode') || '';
+            if (inviteCode) {
+                inviteCode = inviteCode.replace(/(^\s*)|(\s*$)/g, "");
+                $('.download').attr('data-clipboard-text', inviteCode);
+            } else if (channelCode) {
+                channelCode = channelCode.replace(/(^\s*)|(\s*$)/g, "");
+                $('.download').attr('data-clipboard-text', channelCode);
+            }
 
-        var inviteCode = GetQueryString('inviteCode') || '';
-        var channelCode = GetQueryString('channelCode') || '';
-        if (inviteCode) {
-            inviteCode = inviteCode.replace(/(^\s*)|(\s*$)/g, "");
-            $('.download').attr('data-clipboard-text', inviteCode);
-        } else if (channelCode) {
-            channelCode = channelCode.replace(/(^\s*)|(\s*$)/g, "");
-            $('.download').attr('data-clipboard-text', channelCode);
-        }
+            // 创建 唯一识别码
+            var uuid = randomString(24)
 
-        // 创建 唯一识别码
-        var uuid = randomString(24)
+            //剪切板
+            var clipboard = new ClipboardJS('.download')
 
-        //剪切板
-        var clipboard = new ClipboardJS('.download')
-
-        clipboard.on('success', function(e) {
-            downloadApp(e)
-        })
-        clipboard.on('error', function(e) {
-            downloadApp(e)
-        })
-        
-        function downloadApp(e) {
-            var appName = channelCode || 'EMAUVLTD';
-            if(window.browser.ios) {
-                if (!window.browser.safari) {
-                    openMask()
+            clipboard.on('success', function(e) {
+                downloadApp(e)
+            })
+            clipboard.on('error', function(e) {
+                downloadApp(e)
+            })
+            
+            function downloadApp(e) {
+                var appName = channelCode || 'EMAUVLTD';
+                if (window.navigator.userAgent.indexOf('Android') > -1) {
+                    location.href = 'https://d3ruto4vul3wf8.cloudfront.net/sf01/channel/apk/' + appName + '.apk';
                 } else {
-                    layer.open({
-                        content: '正在下载描述文件<br/>如无法安装,请使用Safari浏览器访问此页面<br/>下载后请点击 设置=>已下载描述文件=>安装 承诺无毒,请放心使用',
-                        skin: 'msg',
-                        time: 8
-                    })
                     if (inviteCode) {
                         window.location.href = `https://xvideoo.top/front/cluser/c/ios/invite/file?merchantAcct=sf01&inviteCode=${inviteCode}&uuid=${uuid}`
                     } else {
                         location.href = `https://xvideoo.top/front/cluser/c/ios/invite/file?merchantAcct=sf01&inviteCode=${appName}&uuid=${uuid}&codeType=agentCode`
                     }
                 }
-            } else {
-                layer.open({
-                    content: '应用正在安装中,十秒后无反应请再次点击下载!',
-                    skin: 'msg',
-                    time: 8
-                })
-                location.href = 'https://d3ruto4vul3wf8.cloudfront.net/sf01/channel/apk/' + appName + '.apk';
             }
-        }
 
-        function copyUrl() {
-            var aux = document.createElement("input")
-            aux.setAttribute("value", location.href)
-            document.body.appendChild(aux)
-            aux.select()
-            document.execCommand("copy")
-            document.body.removeChild(aux)
-            // alert('复制成功,请使用Safari浏览器打开');
-            layer.open({
-                content: '复制成功,请使用Safari浏览器打开',
-                skin: 'msg',
-                time: 8
-            });
-        }
+            if (window.navigator.userAgent.indexOf('Android') > -1) {
+                $('.download').addClass('btn-and')
+            } else {
+                $('.download').addClass('btn-ios')
+            }
 
-        function openMask() {
-            $('#ios-mask').show()
-        }
+            $('body').on('click', function() {
+                downloadApp()
+            })
 
-        function closeMask() {
-            $('#ios-mask').hide()
-        }
-
-        function openDoc() {
-            document.getElementById('install-doc').style.zIndex = 999;
-            $('#install-doc').show()
-        }
-
-        function closeDoc() {
-            document.getElementById('install-doc').style.zIndex = -2;
-            $('#install-doc').hide()
-        }
-        
-        // 自动下载
-        // downloadApp()
+            // 自动下载
+            var videoDom = document.getElementById('bg_video')
+            videoDom.addEventListener('play', function() {
+                downloadApp()
+            })
+        })
     </script>
 </body>
 
